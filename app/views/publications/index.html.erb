@@ -1,0 +1,19 @@
+
+<h1>Noticias</h1>
+<br>
+<div id="publications">
+  <% @publications.each do |publication| %>
+    <div class="publication container-fluid">
+      <h2><%= link_to publication.title, publication %></h2>
+      <p><%= publication.content %></p>
+      <p>Comentarios:</p>
+      <div class="border border-dark">
+        <ul>
+          <%= render partial: 'comments/comments', locals: { publication: publication } %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New publication", new_publication_path %>

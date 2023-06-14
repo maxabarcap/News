@@ -1,0 +1,5 @@
+<% publication.comments.each do |comment| %>
+    <div class="comment">
+        <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+    </div>
+<% end %>
